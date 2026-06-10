@@ -1,1 +1,41 @@
-what is the function of redcanvas?
+*Code Logic & Algorithm Questions*
+1. *Why did you use Bresenham’s algorithm for `drawLine` instead of $y = mx + c$?*  
+   Hint: Integer math, no floating point, faster, avoids gaps.
+2. *Explain the midpoint circle algorithm in your `drawCircle` function. What does `d = 3 - 2 _ r` mean?*  
+   Hint: Decision parameter to choose next pixel.
+3. *Why do you check `x >= 0 && x < ROWS && y >= 0 && y < COLS` in `drawPoint`?*  
+   Hint: Boundary checking to prevent array overflow/segfault.
+4. *In `drawRectangle`, why call `drawLine` 4 times instead of filling the array directly?*  
+   Hint: Code reuse, only draws border.
+5. *What happens if user enters coordinates outside 0-19 for rows or 0-39 for cols?*  
+   Hint: `drawPoint` ignores it. Add input validation for better marks.
+6. *Your rubric says “add, delete, modify objects”. Where is delete/modify in your code?*  
+   Hint: You only have Clear. To get 5/5, explain how you’d add an object list + redraw function.
+7. *Why use a 2D character array instead of `graphics.h`?*  
+   Hint: Problem statement requires it. Works on any terminal, no BGI needed.
+8. *Why is canvas initialized with `'_'` and objects drawn with `'_'`?*  
+   Hint: Exact requirement in problem statement.
+9. *How would you save the picture to a file?*  
+   Hint: Open file, loop through `canvas`, `fprintf` each char.
+10. *What is the time complexity of `displayCanvas`? Can you optimize it?*  
+    Hint: $O(ROWS \times COLS)$. Can’t optimize much, but `system("cls")` is slow.
+*Debugging & Improvement Questions*
+11. *If I draw a circle with radius 100, what happens? How to fix it?*  
+    Hint: Most points skipped due to bounds check. Either limit radius or increase canvas size.
+12. *Your `scanf` for triangle takes 4 values but needs 6. Fix the bug.*  
+    Hint: Line should be `scanf("%d %d %d %d %d %d", &x1, &y1, &x2, &y2, &x3, &y3);`
+13. *Why use `system("cls")`? What’s the problem with it?*  
+    Hint: Clears screen but is OS dependent + security issue. Better to print `\n` many times.
+14. *How would you add color to this using just the terminal?*  
+    Hint: ANSI escape codes like `\033[31m` for red, but not in syllabus usual.
+15. *What is the difference between raster graphics and vector graphics? Which one is your editor?*  
+    Hint: Yours is raster. Pixels in a grid vs mathematical equations.
+16. *Explain how `drawTriangle` works using `drawLine`.*  
+    Hint: Triangle = 3 connected lines.
+17. *If we wanted to add a “Fill” tool, how would you implement it?*  
+    Hint: Flood fill algorithm with recursion or stack, like the one I showed earliy
+18. *Show your GitHub commits. Why is “Daily push to GitHub mandatory”?*  
+    Hint: To prove work wasn’t copied last minute. Show commit history.
+19. *What makes your code “Original Complete” vs “Original almost complete”?*  
+    Hint: Delete/modify features + input validation + file save = Complete.
+
